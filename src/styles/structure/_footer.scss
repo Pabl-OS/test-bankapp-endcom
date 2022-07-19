@@ -1,0 +1,16 @@
+
+.footer {
+    &__container {
+        background-color: $light-color;
+        p,h5,h6 {
+            color: $dark-gray-color;
+        }
+        p {
+            font-size: 12px;
+        }
+        
+    }
+    &__logo-text{
+        color: $dark-gray-color;
+    }
+}

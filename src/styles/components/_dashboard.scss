@@ -1,0 +1,86 @@
+
+.dashboard{
+    &__subtitle-section {
+            font-weight: 400;
+            color:$dark-gray-color;
+            font-size: 15px;
+    }
+    &__balances-section {
+        background-color: $blue-color;
+        h4 {
+            color: $dark-gray-color;
+            font-weight: 300;
+        }
+        h6 {
+            font-weight: 500!important;
+            font-size: 12px;
+            color:$blue-light-color;
+        }
+    }
+    &__balances-count-section{
+        color: $primary-color;
+        font-weight: 500;
+    }
+    &__btn-add-card{
+        background-color: transparent;
+        border: 2px solid $primary-color;
+        border-style: dashed;
+        color: $primary-color;
+        height: 70px;
+        width: 100%;
+        &:hover {
+            background-color: $primary-color;
+            color: $light-color;
+        }
+    }
+    &__credit-card {
+        background-color: $primary-color;
+        border: none;
+        color: white;
+        h6{
+            color: white;
+        }
+    }
+
+    &__credit-card-desactive{
+       background-color: $primary-light-color; 
+       border: none;
+       color: white;
+       h6{
+        color: white;
+       }
+    }
+}
+
+
+.table-responsive {
+    background-color: #fff;
+
+    thead {
+        tr th{
+            border-bottom: #01455c!important;
+        }
+    }
+}
+
+table thead tr {
+    border-bottom: 2px solid $dark-gray-color;
+    color: $dark-gray-color;
+    th{
+        font-weight: 400;
+    }
+}
+table tbody {
+    tr {
+        color: $dark-gray-color;
+        font-size: 14px;
+        border-bottom: 1px solid $light-color;
+    }
+}
+
+
+
+
+
+
+
