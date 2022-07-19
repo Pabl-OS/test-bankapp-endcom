@@ -50,31 +50,52 @@
         color: white;
        }
     }
-}
+
+    &__btn-cancel, &__btn-add {
+        border-radius: 0px;
+        border: 0px;
+        color: white;
+        font-weight: 500;
+        padding: 15px;
+    }
 
 
-.table-responsive {
-    background-color: #fff;
+    // modal classes
 
-    thead {
-        tr th{
-            border-bottom: #01455c!important;
+    &__modal-logo-text {
+        color: $primary-color;
+        font-size: 20px;
+    }
+    &__modal-text-add{
+        color: $dark-gray-color;
+    }
+    &__btn-cancel{
+        background-color: $dark-light-color;
+    }
+    &__btn-add {
+        background-color: $primary-color;
+        &:hover {
+            background-color: darken($color: $primary-color, $amount: 10);
         }
     }
+
+
 }
 
-table thead tr {
-    border-bottom: 2px solid $dark-gray-color;
-    color: $dark-gray-color;
-    th{
-        font-weight: 400;
-    }
-}
-table tbody {
-    tr {
-        color: $dark-gray-color;
-        font-size: 14px;
-        border-bottom: 1px solid $light-color;
+
+.form-control{
+    height: 47px;
+    font-size: 15px;
+
+    &:focus {
+        outline: none ;
+        border: 2px solid  $primary-color;
+        color: $primary-color;
+        box-shadow:none;
+
+        &::placeholder{
+            color: $primary-color;
+        }
     }
 }
 

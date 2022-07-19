@@ -8,6 +8,7 @@ import { AccountsComponent } from './components/accounts/accounts.component';
 import { MovementsComponent } from './components/movements/movements.component';
 import { BalancesComponent } from './components/balances/balances.component';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     DashboardRoutingModule,
     NgbModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }

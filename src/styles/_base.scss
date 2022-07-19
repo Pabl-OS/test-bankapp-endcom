@@ -7,3 +7,33 @@
 body {
     background-color: $light-color;
 }
+
+
+.modal-footer,.modal-header{
+    border: none !important;
+}
+
+.table-responsive {
+    background-color: #fff;
+
+    thead {
+        tr th{
+            border-bottom: #01455c!important;
+        }
+    }
+}
+
+table thead tr {
+    border-bottom: 2px solid $dark-gray-color;
+    color: $dark-gray-color;
+    th{
+        font-weight: 400;
+    }
+}
+table tbody {
+    tr {
+        color: $dark-gray-color;
+        font-size: 14px;
+        border-bottom: 1px solid $light-color;
+    }
+}

@@ -39,11 +39,111 @@
             </div>
         </div>
     </div>
-    <button class="btn mt-2 dashboard__btn-add-card  btn-block text-uppercase">
+    <button (click)="openModalCard(cardModal)"
+            class="btn mt-2 dashboard__btn-add-card  btn-block text-uppercase">
         <div class="d-flex justify-content-between m-2">
             Agregar tarjeta
             <span>+</span>
         </div>
     </button>
 </section>
+
+<ng-template #cardModal let-modal let-c="close" let-d="dismiss">
+    <div class="modal-content p-4">
+        <div class="modal-header mb-0 b-0">
+            <h4 class="modal-title dashboard__modal-logo-text" >BankApp</h4>
+            <h6 class="dashboard__modal-text-add">Agregar tarjeta</h6>
+        </div>
+        <div class="modal-body">
+        <form [formGroup]="cardCreate">
+            <div class="mb-3">
+                <input type="number" 
+                       id="numeroTarjeta"
+                       name="numeroTarjeta"
+                       formControlName="numeroTarjeta" 
+                       class="form-control"
+                       placeholder="Número de tarjeta"
+                       [class.is-invalid]="inputIsValid('numeroTarjeta')">
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-6">
+                    <input type="text" 
+                       id="cuenta"
+                       name="cuenta"
+                       formControlName="cuenta" 
+                       class="form-control"
+                       placeholder="Cuenta"
+                       [class.is-invalid]="inputIsValid('cuenta')">
+                </div>
+                <div class="col-6">
+                    <input type="text" 
+                       id="issuer"
+                       name="issuer"
+                       formControlName="issuer" 
+                       class="form-control"
+                       placeholder="Issuer"
+                       [class.is-invalid]="inputIsValid('issuer')">
+                </div>
+            </div>
+            <div class="mb-3">
+                <input type="text"
+                      id="nombreTarjeta" 
+                      name="nombreTarjeta" 
+                      class="form-control"
+                      formControlName="nombreTarjeta" 
+                      placeholder="Nombre de tarjeta"
+                      [class.is-invalid]="inputIsValid('nombreTarjeta')">
+            </div>
+            <div class="mb-3">
+                <input type="text"
+                      id="marca" 
+                      name="marca" 
+                      class="form-control"
+                      formControlName="marca" 
+                      placeholder="Marca"
+                      [class.is-invalid]="inputIsValid('marca')">
+            </div>
+
+            <div class="mb-3">
+                <input type="text"
+                      id="estatus" 
+                      name="estatus" 
+                      class="form-control"
+                      formControlName="estatus" 
+                      placeholder="Estatus"
+                      [class.is-invalid]="inputIsValid('estatus')">
+            </div>
+            <div class="mb-3">
+                <input type="number"
+                      id="saldo" 
+                      name="saldo" 
+                      class="form-control"
+                      formControlName="saldo" 
+                      placeholder="Saldo"
+                      [class.is-invalid]="inputIsValid('saldo')">
+            </div>
+            <div class="mb-3">
+                <input type="text"
+                      id="tipoCuenta" 
+                      name="tipoCuenta" 
+                      class="form-control"
+                      formControlName="tipoCuenta" 
+                      placeholder="Tipo de cuenta"
+                      [class.is-invalid]="inputIsValid('tipoCuenta')">
+            </div>
+        </form>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+            <button type="button" 
+                    class="btn dashboard__btn-cancel" 
+                    (click)="modal.close()">Cancelar</button>
+            <button type="button" 
+                    class="btn dashboard__btn-add btn-primary"
+                    (click)="handleCreateCard()" >Agregar tarjeta</button>
+        </div>
+    </div><!-- /.modal-content -->
+
+</ng-template>
+
 
