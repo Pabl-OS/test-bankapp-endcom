@@ -60,6 +60,8 @@ export class AccountsComponent implements OnInit {
     if (this.cardCreate.invalid) {
       this.cardCreate.markAllAsTouched();
     }
+    alert(JSON.stringify(this.cardCreate.value));
+    
   }
 
 }
