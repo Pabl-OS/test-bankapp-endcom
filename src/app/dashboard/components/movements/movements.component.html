@@ -1,5 +1,6 @@
 <section class="dashboard__movements-container">
-  <h6 class="dashboard__subtitle-section">MOVIMIENTOS</h6>   
+  <h6 class="dashboard__subtitle-section">MOVIMIENTOS</h6>
+     
    <div class="table-responsive bg-light mt-3">
        <table class="table table-borderless">
            <thead class="table-light">
@@ -9,33 +10,21 @@
                <th>Monto</th>
              </tr>
            </thead>
-           <tbody>
-             <tr>
-               <td>00/00/0000</td>
-               <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum a tenetur modi, nemo quaerat sequi velit repudiandae quidem totam.</td>
-               <td><b>$800.00</b></td>
-             </tr>
-             <tr>
-               <td>00/00/0000</td>
-               <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum a tenetur modi, nemo quaerat sequi velit repudiandae quidem totam.</td>
-               <td class="text-danger"><b>$800.00</b></td>
-             </tr>
-             <tr>
-               <td>00/00/0000</td>
-               <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum a tenetur modi, nemo quaerat sequi velit repudiandae quidem totam.</td>
-               <td  class="text-success"><b>$800.00</b></td>
-             </tr>
-             <tr>
-               <td>00/00/0000</td>
-               <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum a tenetur modi, nemo quaerat sequi velit repudiandae quidem totam.</td>
-               <td><b>$800.00</b></td>
-             </tr>
-             <tr>
-               <td>00/00/0000</td>
-               <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum a tenetur modi, nemo quaerat sequi velit repudiandae quidem totam.</td>
-               <td><b>$800.00</b></td>
+           <tbody *ngIf="movements && !isLoading">
+             <tr *ngFor="let movement of movements.movimientos">
+               <td>{{movement.fecha }}</td>
+               <td>{{movement.descripcion}}</td>
+               <td [class.text-success]="movement.tipo =='abono'"
+                   [class.text-danger]="movement.tipo =='cargo'">
+                <b>{{movement.monto}}</b>
+              </td>
              </tr>
            </tbody>
-       </table>
+          </table>
+          <div class="text-center mt-4 mb-4" *ngIf="isLoading">
+            <div class="spinner-border text-secondary" role="status">
+              <span class="visually-hidden"></span>
+            </div>
+          </div>
    </div>
 </section>

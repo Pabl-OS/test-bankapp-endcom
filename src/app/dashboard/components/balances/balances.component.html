@@ -1,12 +1,14 @@
 <section class="dashboard__balances-section">
     <div class="container-xl pt-3 pb-3">
-        <div class="row ">
+        <div class="row " *ngIf="balance">
             <div class="col-md-3 mt-3 mb-3">
                 <div class="card">
                     <div class="d-flex justify-content-around mt-4 mb-4">
                         <h6>SALDO GENERAL <br>
                             EN CUENTAS</h6>
-                        <h4 class="dashboard__balances-count-section">$2,000.00</h4>    
+                        <h4 class="dashboard__balances-count-section text-success">
+                           {{balance.saldos[0].saldoGeneral |currency}}
+                        </h4>    
                     </div>
                 </div>    
             </div>
@@ -16,7 +18,7 @@
                         <h6>TOTAL DE <br>
                             INGRESOS
                         </h6>
-                        <h4>$8,000.00</h4>    
+                        <h4>{{balance.saldos[0].ingresos | currency}}</h4>    
                     </div>
                 </div> 
     
@@ -27,7 +29,7 @@
                         <h6>TOTAL DE <br>
                             GASTOS
                         </h6>
-                        <h4>$8,000.00</h4>    
+                        <h4>{{balance.saldos[0].gastos | currency}}</h4>    
                     </div>
                 </div> 
             </div>

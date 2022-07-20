@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Movements } from 'src/app/interfaces/Movements';
+import { DashboardService } from 'src/app/services/dashboard.service';
 
 @Component({
   selector: 'app-movements',
@@ -6,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovementsComponent implements OnInit {
 
-  constructor() { }
+  public movements!:Movements;
+  public isLoading:boolean = false;
+  constructor(private _dashboardService:DashboardService) { }
 
   ngOnInit(): void {
+    this.getMovements();
+  }
+  getMovements(){
+    this.isLoading = true;
+    this._dashboardService.getMovements().subscribe({
+      next:response =>{
+        this.movements =  response;
+        this.isLoading = false;
+      },error:error =>{
+        console.log('error',error);
+        this.isLoading = false;
+
+      }
+    })
   }
 
 }

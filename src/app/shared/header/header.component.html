@@ -27,12 +27,12 @@
             </a>
           </li>
         </ul>
-        <div  class="nabvar__profile-section">
+        <div  class="nabvar__profile-section" *ngIf="account">
                 <h5 class="m-0  navbar__profile-name">
-                    Pablo Santiago
+                   {{account.cuenta[0]?.nombre}}
                 </h5>
                 <p class="m-0 mt-1 navbar__profile-last-conection" >
-                    Último inicio 18/10/2021
+                    Último inicio {{account.cuenta[0].ultimaSesion}}
                 </p>
         </div>
       </div>
